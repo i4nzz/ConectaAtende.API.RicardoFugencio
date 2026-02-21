@@ -1,0 +1,53 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.DotSettings.user
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Publicação / Deploy
+publish/
+out/
+
+# Logs
+*.log
+logs/
+
+ConectaAtende.API/appsettings.json
+ConectaAtende.API/Properties/launchSettings.json
+
+
+**/appsettings.json
+**/appsettings.*.json
+!**/appsettings.Example.json
+**/secrets.json
+**/.env
+**/.env.*
+
+# Cobertura de testes
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+*.opencover.xml
+
+
+# OS
+.DS_Store
+Thumbs.db

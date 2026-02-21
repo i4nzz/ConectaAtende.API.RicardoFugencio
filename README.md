@@ -24,25 +24,10 @@ cd ConectaAtende
 
 ---
 
-## Configurando o ambiente
-
-O arquivo `appsettings.json` não é versionado por conter informações sensíveis. Você precisará criá-lo manualmente.
-
-**1. Acesse a pasta da API:**
-
-```bash
-cd ConectaAtende.API
-```
-
-**2. Crie o arquivo `appsettings.json` com base no exemplo disponível:**
-
-```bash
-cp appsettings.Example.json appsettings.json
-```
 
 > Caso não tenha o arquivo de exemplo, crie o `appsettings.json` manualmente com a estrutura abaixo.
 
-**3. Preencha as configurações:**
+**. Preencha as configurações:**
 
 ```json
 {
@@ -57,16 +42,6 @@ cp appsettings.Example.json appsettings.json
   },
   "AllowedHosts": "*"
 }
-```
-
----
-
-## Restaurando as dependências
-
-Na raiz da solução, execute:
-
-```bash
-dotnet restore
 ```
 
 ---
@@ -127,14 +102,3 @@ dotnet test
 
 ---
 
-## Contribuindo
-
-1. Crie uma branch a partir da `main`:
-   ```bash
-   git checkout -b feature/minha-feature
-   ```
-2. Faça suas alterações e commit:
-   ```bash
-   git commit -m "feat: descrição da feature"
-   ```
-3. Abra um Pull Request para revisão.

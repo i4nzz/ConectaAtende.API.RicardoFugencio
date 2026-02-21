@@ -18,7 +18,7 @@ Antes de começar, certifique-se de ter instalado:
 ## Clonando o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/ConectaAtende.git
+git clone https://github.com/i4nzz/ConectaAtende.API.RicardoFugencio.git
 cd ConectaAtende
 ```
 

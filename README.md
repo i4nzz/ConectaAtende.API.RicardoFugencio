@@ -24,8 +24,8 @@ git clone https://github.com/i4nzz/ConectaAtende.API.RicardoFugencio.git
 Abra o CMD na pasta que foi Clonada
 ```
 cd ConectaAtende
-```
 Docker compose up --build
+```
 ---
 A API estará disponível em:
 ```

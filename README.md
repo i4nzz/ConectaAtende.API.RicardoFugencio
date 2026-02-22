@@ -14,7 +14,18 @@ Antes de começar, certifique-se de ter instalado:
 - Um editor como [Visual Studio](https://visualstudio.microsoft.com/)
 
 ---
+## Estrutura do projeto
 
+```
+ConectaAtende.API.RicardoFugencio/
+├── ConectaAtende.API          # Camada de apresentação (Controllers, configuração)
+├── ConectaAtende.Application  # Casos de uso, DTOs, interfaces e serviços
+├── ConectaAtende.Domain       # Entidades e regras de negócio
+├── ConectaAtende.Infra        # Acesso a dados, repositórios, migrations
+├── ConectaAtende.Benchmarks   # Testes de performance com BenchmarkDotNet
+└── ConectaAtende.sln
+```
+---
 ## Clonando o repositório
 
 ```bash
@@ -31,21 +42,7 @@ A API estará disponível em:
 ```
 http://localhost:5005/swagger/index.html
 ```
----
 
-## Estrutura do projeto
-
-```
-ConectaAtende.API.RicardoFugencio/
-├── ConectaAtende.API          # Camada de apresentação (Controllers, configuração)
-├── ConectaAtende.Application  # Casos de uso, DTOs, interfaces e serviços
-├── ConectaAtende.Domain       # Entidades e regras de negócio
-├── ConectaAtende.Infra        # Acesso a dados, repositórios, migrations
-├── ConectaAtende.Benchmarks   # Testes de performance com BenchmarkDotNet
-└── ConectaAtende.sln
-```
-
----
 
 
 

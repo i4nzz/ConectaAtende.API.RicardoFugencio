@@ -23,7 +23,7 @@ git clone https://github.com/i4nzz/ConectaAtende.API.RicardoFugencio.git
 ## Execute o Docker
 Abra o CMD na pasta que foi Clonada
 ```
-cd ConectaAtende
+cd ConectaAtende.API.RicardoFugencio
 Docker compose up --build
 ```
 ---
@@ -36,7 +36,7 @@ http://localhost:5005/swagger/index.html
 ## Estrutura do projeto
 
 ```
-ConectaAtende/
+ConectaAtende.API.RicardoFugencio/
 ├── ConectaAtende.API          # Camada de apresentação (Controllers, configuração)
 ├── ConectaAtende.Application  # Casos de uso, DTOs, interfaces e serviços
 ├── ConectaAtende.Domain       # Entidades e regras de negócio

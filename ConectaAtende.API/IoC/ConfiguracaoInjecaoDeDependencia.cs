@@ -3,6 +3,7 @@ using ConectaAtende.Application.Interfaces.InMemory;
 using ConectaAtende.Application.Policies;
 using ConectaAtende.Application.Services;
 using ConectaAtende.Domain.Interface;
+using ConectaAtende.Domain.Interfaces;
 using ConectaAtende.Infra.Repositories;
 using ConectaAtende.Infra.Repositories.InMemory;
 
@@ -21,8 +22,11 @@ public static class ConfiguracaoInjecaoDeDependencia
         services.AddScoped<IOperationHistoryRepository, OperationHistoryRepository>();
         services.AddScoped<IContatosRecentesRepository, ContatosRecentesRepository>();
 
-        services.AddScoped<ITriagePolicy, PrioridadeTriagePolicy>();
-        
+        services.AddSingleton<OrdemChegadaTriagePolicy>();
+        services.AddSingleton<PrioridadeTriagePolicy>();
+        services.AddSingleton<MistaTriagePolicy>();
+        services.AddSingleton<TriagePolicyState>();
+
         // services
         services.AddScoped<IContatoService, ContatoService>();
         services.AddScoped<ITicketService, TicketService>();

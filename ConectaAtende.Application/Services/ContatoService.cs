@@ -1,4 +1,4 @@
-﻿using ConectaAtende.Application.DTO;
+﻿using ConectaAtende.Application.DTO.ContatoDTO;
 using ConectaAtende.Application.Interfaces;
 using ConectaAtende.Application.Interfaces.InMemory;
 using ConectaAtende.Application.Response;

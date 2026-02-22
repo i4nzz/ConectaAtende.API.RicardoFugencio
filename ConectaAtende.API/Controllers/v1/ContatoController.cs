@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using ConectaAtende.Application.DTO;
+using ConectaAtende.Application.DTO.ContatoDTO;
 using ConectaAtende.Application.Interfaces;
 using ConectaAtende.Application.Response;
 using Microsoft.AspNetCore.Mvc;
@@ -10,18 +10,18 @@ namespace ConectaAtende.API.Controllers.v1;
 [Route("ConectaAtende/v1/Contato")]
 public class ContatoController : ControllerBase
 {
-    private readonly IContatoService _service;
+    private readonly IContatoService _contatoService;
 
-    public ContatoController(IContatoService service)
+    public ContatoController(IContatoService contatoService)
     {
-        _service = service;
+        _contatoService = contatoService;
     }
 
     // POST ConectaAtende/v1/Contato
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateContactRequest request)
     {
-        var result = await _service.CriarAsync(request);
+        var result = await _contatoService.CriarAsync(request);
 
         return StatusCode((int)HttpStatusCode.Created, new RespostaMetodos<object>
         {
@@ -35,7 +35,7 @@ public class ContatoController : ControllerBase
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> GetById(Guid id)
     {
-        var contato = await _service.ObterPorIdAsync(id);
+        var contato = await _contatoService.ObterPorIdAsync(id);
 
         if (contato is null) return NotFound();
 
@@ -51,7 +51,7 @@ public class ContatoController : ControllerBase
     [HttpPut("{id:guid}")]
     public async Task<IActionResult> Update(Guid id, [FromBody] UpdateContactRequest request)
     {
-        var result = await _service.AtualizarAsync(id, request);
+        var result = await _contatoService.AtualizarAsync(id, request);
 
         if (!result.Sucesso)
             return StatusCode((int)HttpStatusCode.NotFound, new RespostaMetodos<object>
@@ -74,7 +74,7 @@ public class ContatoController : ControllerBase
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> Delete(Guid id)
     {
-        var resposta = await _service.RemoverAsync(id);
+        var resposta = await _contatoService.RemoverAsync(id);
 
         if (!resposta.Sucesso)
         {
@@ -101,7 +101,7 @@ public class ContatoController : ControllerBase
         [FromQuery] int page = 1,
         [FromQuery] int pageSize = 10)
     {
-        var result = await _service.ObterTodosAsync(page, pageSize);
+        var result = await _contatoService.ObterTodosAsync(page, pageSize);
         return StatusCode((int)HttpStatusCode.OK, new RespostaMetodos<object>
         {
             Sucesso = true,
@@ -139,11 +139,12 @@ public class ContatoController : ControllerBase
             });
         }
 
+
         return StatusCode((int)HttpStatusCode.OK, new RespostaMetodos<object>
         {
             Sucesso = true,
             StatusCode = HttpStatusCode.OK,
-            ObjetoRetorno = !string.IsNullOrWhiteSpace(name) ? await _service.BuscarPorNomeAsync(name) : await _service.BuscarPorTelefoneAsync(phone!)
+            ObjetoRetorno = !string.IsNullOrWhiteSpace(name) ? await _contatoService.BuscarPorNomeAsync(name) : await _contatoService.BuscarPorTelefoneAsync(phone!)
         });
     }
 
@@ -151,7 +152,7 @@ public class ContatoController : ControllerBase
     [HttpPost("undo")]
     public async Task<IActionResult> Undo()
     {
-        var resposta = await _service.DesfazerUltimaOperacaoAsync();
+        var resposta = await _contatoService.DesfazerUltimaOperacaoAsync();
 
         if (!resposta.Sucesso)
         {
@@ -176,7 +177,7 @@ public class ContatoController : ControllerBase
     [HttpGet("recent")]
     public async Task<IActionResult> GetRecent([FromQuery] int limit = 5)
     {
-        var result = await _service.ObterRecentesAsync(limit);
+        var result = await _contatoService.ObterRecentesAsync(limit);
         return StatusCode((int)HttpStatusCode.OK, new RespostaMetodos<object>
         {
             Sucesso = true,

@@ -71,4 +71,13 @@ public class TicketRepository : ITicketRepository
         return await _context.Tickets
             .AnyAsync(t => t.Id == id);
     }
+
+    public async Task<Ticket?> ObterProximoDaFilaAsync()
+    {
+        return await _context.Tickets
+            .Where(t => t.Status == StatusTicketEnum.NaFila)
+            .OrderByDescending(t => t.Prioridade)
+            .ThenBy(t => t.DataCriacao)
+            .FirstOrDefaultAsync();
+    }
 }

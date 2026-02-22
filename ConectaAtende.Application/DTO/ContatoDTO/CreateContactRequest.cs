@@ -1,4 +1,4 @@
-﻿namespace ConectaAtende.Application.DTO
+﻿namespace ConectaAtende.Application.DTO.ContatoDTO
 {
     public class CreateContactRequest
     {

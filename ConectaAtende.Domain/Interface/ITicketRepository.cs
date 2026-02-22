@@ -13,4 +13,5 @@ public interface ITicketRepository
     Task<Ticket> AtualizarAsync(Ticket ticket);
     Task<bool> RemoverAsync(Guid id);
     Task<bool> ExisteAsync(Guid id);
+    Task<Ticket?> ObterProximoDaFilaAsync();
 }

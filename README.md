@@ -11,7 +11,8 @@ Antes de começar, certifique-se de ter instalado:
 - [.NET 8 SDK](https://dotnet.microsoft.com/download)
 - [SQL Server](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads) (ou SQL Server Express)
 - [Git](https://git-scm.com/)
-- Um editor como [Visual Studio](https://visualstudio.microsoft.com/)
+- Um editor como [Visual Studio](https://visualstudio.microsoft.com/) ou [VisualStudio Code](https://code.visualstudio.com/download)
+- Docker Desktop
 
 ---
 ## Estrutura do projeto

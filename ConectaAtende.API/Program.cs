@@ -31,10 +31,11 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    //if (context.Database.GetPendingMigrations().Any())
-    //{
-    //    context.Database.Migrate();
-    //};
+    if (context.Database.GetPendingMigrations().Any())
+    {
+        context.Database.Migrate();
+    }
+    ;
 }
 
 // Configure the HTTP request pipeline.

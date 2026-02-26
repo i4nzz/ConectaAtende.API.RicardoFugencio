@@ -14,8 +14,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A2CA96DB-7CFE-47BE-AC0A-BBE478268546}"
+	ProjectSection(SolutionItems) = preProject
+		ContatoTests.cs = ContatoTests.cs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConectaAtende.Infra", "ConectaAtende.Infra\ConectaAtende.Infra.csproj", "{3C0D2D6C-650E-1213-2D5D-08A5D9FF471D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benchmarks", "Benchmarks", "{7ACBB896-8011-46D1-A69E-2BF96F4E9A2E}"
+	ProjectSection(SolutionItems) = preProject
+		ContatoBench.cs = ContatoBench.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

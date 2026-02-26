@@ -1,6 +1,7 @@
 using ConectaAtende.API.IoC;
 using ConectaAtende.Infra.Context;
 using Microsoft.EntityFrameworkCore;
+using BenchmarkDotNet.Running;
 
 var builder = WebApplication.CreateBuilder(args);
 

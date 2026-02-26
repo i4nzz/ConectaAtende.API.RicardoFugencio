@@ -7,10 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.15.8" />
+    <PackageReference Include="xunit.v3" Version="3.2.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ConectaAtende.API\ConectaAtende.API.csproj" />
     <ProjectReference Include="..\ConectaAtende.Domain\ConectaAtende.Domain.csproj" />
   </ItemGroup>
 
